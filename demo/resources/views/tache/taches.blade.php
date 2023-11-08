@@ -22,7 +22,7 @@
                             {{$tache->nom_tache}}
                         </div> 
                         <div class="card-body">   
-                            <h5 class="card-title">Date limite: {{$tache->date_limite}}</h5>
+                            <h5 class="card-title">Prioritté: {{$tache->priorite}}</h5>
                             <p class="card-text">{{$tache->description_tache}}</p>
                             <a href="#" class="card-link">Supprimer</a>
                             <a href="/taches/{{$tache->id}}/details" class="card-link">details</a>
@@ -34,7 +34,7 @@
         </div>
 
     </div>
-    <!-- <div class="container">
+    <!-- <div class="container">  
         <div class="row">
             <!-<div class="col col-12 col-md-3 m-1"> -->
             <!-- @for ($i=1; $i < 8; $i++) -->

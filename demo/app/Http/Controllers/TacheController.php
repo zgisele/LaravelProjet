@@ -19,5 +19,16 @@ class TacheController extends Controller
         $tache =Tache::findOrfail($req->id);
         return view("tache.show", ["tacheTrouvee"=>$tache]);
     }
+
+
+    public function terminer(Request $req){
+
+        $tache =Tache::findOrfail($req->id);
+
+        $tache->is_termine=1;
+        $tache->save();
+
+        return back();
+    }
 }
 

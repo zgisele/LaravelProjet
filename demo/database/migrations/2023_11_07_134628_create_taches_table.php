@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description_tache');
             $table->date('date_echeance')->nullable();
             $table->enum('priorite',["haute","moyenne", "faible"]);
+            $table->boolean('is_termine', [0,1]);
             $table->timestamps();
         });
     }
