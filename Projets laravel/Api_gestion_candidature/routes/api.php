@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\FormationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,8 @@ Route::group([
     Route::post('me',[AuthController::class,'me']);
 
 });
+
+Route::get('formations',[FormationController::class,'index']);
+Route::post('formations/create',[FormationController::class,'store']);
+Route::put('formations/edit/{formation}',[FormationController::class,'update']);
+Route::delete('formations/{formation}',[FormationController::class,'delete']);
