@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\UsersFormation;
+use App\Http\Controllers\CandidatureController;
 use App\Http\Controllers\Api\FormationController;
 
 /*
@@ -42,8 +44,14 @@ Route::group([
     Route::post('me',[AuthController::class,'me']);
 
 });
-
+// gestion de la formation
 Route::get('formations',[FormationController::class,'index']);
 Route::post('formations/create',[FormationController::class,'store']);
 Route::put('formations/edit/{formation}',[FormationController::class,'update']);
 Route::delete('formations/{formation}',[FormationController::class,'delete']);
+
+// gestion de la candidature(UsersFormation)
+Route::get('candidatures',[CandidatureController::class,'index']);
+Route::post('candidatures/create/{id}',[CandidatureController::class,'store'])->middleware('auth:api');
+Route::put('candidatures/edit/{candidature}/{id}',[CandidatureController::class,'update']);
+Route::delete('candidatures/{candidature}',[CandidatureController::class,'delete']);
