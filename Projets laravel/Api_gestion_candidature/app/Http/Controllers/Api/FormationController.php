@@ -14,18 +14,18 @@ class FormationController extends Controller
     public function index()
     {
             //
-            return 'Bonjour';
-            // try{
-            //     return response()->json([
-            //         "status_code"=>200,
-            //         "status_messages"=>"Le poste ont ete recuperer",
-            //         "data"=>Formation::all()
-            //     ]);
-            // }catch(Exception $e){
+            // return 'Bonjour';
+            try{
+                return response()->json([
+                    "status_code"=>200,
+                    "status_messages"=>"Les formations ont ete recuperé",
+                    "data"=>Formation::all()
+                ]);
+            }catch(Exception $e){
 
-            //     response()->json($e);
+                response()->json($e);
 
-            // }
+            }
     }
     public function store(CreateFormationRequest $request)
     {
@@ -88,7 +88,7 @@ class FormationController extends Controller
             }catch(Exception $e){
     
              response()->json($e);
-             
+
             }
 
     }
